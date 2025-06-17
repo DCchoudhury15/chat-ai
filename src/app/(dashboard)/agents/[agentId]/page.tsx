@@ -2,7 +2,7 @@ import { getQueryClient, trpc } from "@/trpc/server";
 import { dehydrate, HydrationBoundary } from "@tanstack/react-query";
 import { Suspense } from "react";
 import { ErrorBoundary } from "react-error-boundary";
-import { AgentIdView, AgentIdViewError, AgentIdViewLoading } from "../ui/views/agent-id-view";
+import { AgentIdView, AgentIdViewError, AgentIdViewLoading } from "../../../../modules/auth/ui/views/agents/ui/views/agent-id-view";
 
 interface Props{
     params:Promise<{agentId:string}>
