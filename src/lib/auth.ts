@@ -22,5 +22,9 @@ export const auth = betterAuth({
            ...schema,
          }, // or "mysql", "sqlite"
     }),
+    trustedOrigins: [
+        "http://localhost:3000",
+        "https://proper-sadly-cicada.ngrok-free.app"
+    ],
 
 });
