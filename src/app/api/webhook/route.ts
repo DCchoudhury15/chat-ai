@@ -101,7 +101,7 @@ realtimeClient.updateSession({
   const call =streamVideo.video.call("default", meetingId);
   await call.end();
 }
-else if(eventType==="call.seesion_ended"){
+else if(eventType==="call.session_ended"){
     const event =payload as CallEndedEvent;
     const meetingId = event?.call.custom?.meetingId;
  if(!meetingId){
@@ -123,7 +123,7 @@ else if(eventType==="call.transcription_ready"){
 
    .update(meetings)
    .set({
- transciptUrl:event.call_transcription.url,
+ transcriptUrl:event.call_transcription.url,
    })
    .where(eq(meetings.id, meetingId))
    .returning();
@@ -134,7 +134,7 @@ else if(eventType==="call.transcription_ready"){
     name:"meetings/processing",
     data:{
     meetingId:updatedMeeting.id,
-    transcriptUrl:updatedMeeting.transciptUrl,
+    transcriptUrl:updatedMeeting.transcriptUrl,
     },
    });
 }else if(eventType==="call.recording_ready"){
