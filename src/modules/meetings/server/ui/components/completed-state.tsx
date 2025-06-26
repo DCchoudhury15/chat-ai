@@ -53,11 +53,15 @@ Ask AI
                     </div>
                     <TabsContent value="recording">
                         <div className="bg-white rounded-lg border px-4 py-5">
-                             <video
-                             src={data.recordingUrl!}
-                             className="w-full rounded-lg"
-                             controls
-                             />
+                              {data.recordingUrl ? (
+    <video
+        src={data.recordingUrl}
+        className="w-full rounded-lg"
+        controls
+    />
+) : (
+    <p className="text-muted-foreground">No recording available</p>
+)}
                         </div>
                     </TabsContent>
                     <TabsContent value="summary">
@@ -95,13 +99,13 @@ Ask AI
                                             <h1 className="text-2xl font-medium mb-6"{...props}/>
                                         ),
                                         h2:(props)=>(
-                                            <h1 className="text-xl font-medium mb-6"{...props}/>
+                                            <h2 className="text-xl font-medium mb-6"{...props}/>
                                         ),
                                         h3:(props)=>(
-                                            <h1 className="text-lg font-medium mb-6"{...props}/>
+                                            <h3 className="text-lg font-medium mb-6"{...props}/>
                                         ),
                                         h4:(props)=>(
-                                            <h1 className="text-base font-medium mb-6"{...props}/>
+                                            <h4 className="text-base font-medium mb-6"{...props}/>
                                         ),
                                         p:(props)=>(
                                             <p className="mb-6 leadings-relaxed"{...props}/>
